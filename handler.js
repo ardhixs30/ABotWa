@@ -1512,22 +1512,7 @@ module.exports = handle = (client, Client) => {
                 case 'tes':
                     data.reply('auto upt')
                     break
-                case 'return':
-		        case 'eval':
-                    if(!data.isOwner) return data.reply(mess.ownerOnly)
-                    try {
-                        data.reply(JSON.stringify(eval(body), null, 3))
-                    } catch (ers) {
-                        data.reply(ers.toString())
-                    }
-                    break
-		        case 'term':
-                    if(!data.isOwner) return data.reply(mess.ownerOnly)
-					exec(data.body, (err, stdout) => {	
-				    if (err) return data.reply(err.toString())
-					if (stdout) return data.reply(stdout)
-					})
-				    break
+
                 case 'getquoted':
                     data.reply(JSON.stringify(message.message.extendedTextMessage.contextInfo, null, 3))
                     break
